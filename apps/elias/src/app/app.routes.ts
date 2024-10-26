@@ -1,15 +1,18 @@
 import { Route } from '@angular/router';
 
-import { SimpleRegisterComponent } from './pages/simple-register/simple-register.component';
-import { MainPageComponent } from './pages/main-page/main-page.component';
-
 export const appRoutes: Route[] = [
   {
     path: 'simple-register',
-    component: SimpleRegisterComponent,
+    loadComponent: () =>
+      import('./pages/simple-register/simple-register.component').then(
+        (m) => m.SimpleRegisterComponent
+      ),
   },
   {
     path: 'main-page',
-    component: MainPageComponent,
+    loadComponent: () =>
+      import('./pages/main-page/main-page.component').then(
+        (m) => m.MainPageComponent
+      ),
   },
 ];
