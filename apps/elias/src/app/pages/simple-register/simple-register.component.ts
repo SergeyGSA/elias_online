@@ -50,9 +50,10 @@ export class SimpleRegisterComponent {
 
   public onSubmit(): void {
     const newPlayer = this.simpleRegisterForm.value;
-    newPlayer.name &&
-      this.localStorageService.setPlayerToStorage(newPlayer.name);
 
-    this.router.navigate(['main-page']);
+    if (newPlayer.name) {
+      this.localStorageService.setPlayerToStorage(newPlayer.name);
+      this.router.navigate(['main-page']);
+    }
   }
 }
