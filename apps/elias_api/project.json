@@ -1,0 +1,28 @@
+{
+  "name": "elias_api",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/elias_api/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "dependsOn": [
+        "build"
+      ],
+      "options": {
+        "buildTarget": "elias_api:build",
+        "runBuildTargetDependencies": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "elias_api:build:development"
+        },
+        "production": {
+          "buildTarget": "elias_api:build:production"
+        }
+      }
+    }
+  }
+}
