@@ -9,6 +9,8 @@ import {
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
+import { Router, RouterModule } from '@angular/router';
+
 import { LocalStorageService } from '../../core/services/local-storage/local-storage.service';
 
 interface ISimpleRegisterForm {
@@ -24,6 +26,7 @@ interface ISimpleRegisterForm {
     MatInputModule,
     MatButtonModule,
     ReactiveFormsModule,
+    RouterModule,
   ],
   providers: [LocalStorageService],
   templateUrl: './simple-register.component.html',
@@ -34,6 +37,7 @@ export class SimpleRegisterComponent {
   public simpleRegisterForm: FormGroup<ISimpleRegisterForm>;
 
   private localStorageService = inject(LocalStorageService);
+  private router = inject(Router);
 
   constructor() {
     this.simpleRegisterForm = new FormGroup<ISimpleRegisterForm>({
@@ -49,6 +53,6 @@ export class SimpleRegisterComponent {
     newPlayer.name &&
       this.localStorageService.setPlayerToStorage(newPlayer.name);
 
-    this.simpleRegisterForm.reset();
+    this.router.navigate(['main-page']);
   }
 }
