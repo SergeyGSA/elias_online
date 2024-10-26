@@ -1,8 +1,8 @@
-<main class="main">
-  <h1 class="main-page-heading">Раді вітати на борту, {{ getPlayerName() }}!</h1>
+<main class="w-full h-full bg-black flex flex-col justify-evenly items-center">
+  <h1 class="text-white text-[32px] font-medium">Раді вітати на борту, {{ getPlayerName() }}!</h1>
 
-  <div class="buttons-wrapper">
-    <a mat-raised-button href="https://www.google.com/" target="_blank">Створити нову гру</a>
+  <div class="flex flex-col justify-evenly">
+    <a mat-raised-button [routerLink]="" class="mb-[30px]">Створити нову гру</a>
     <button mat-raised-button (click)="openDialog()">Приєднатися до гри</button>
   </div>
 </main>
