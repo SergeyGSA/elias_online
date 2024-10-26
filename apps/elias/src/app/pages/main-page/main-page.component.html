@@ -1,3 +1,8 @@
 <main class="main">
   <h1 class="main-page-heading">Раді вітати на борту, {{ getPlayerName() }}!</h1>
+
+  <div class="buttons-wrapper">
+    <a mat-raised-button href="https://www.google.com/" target="_blank">Створити нову гру</a>
+    <button mat-raised-button (click)="openDialog()">Приєднатися до гри</button>
+  </div>
 </main>
