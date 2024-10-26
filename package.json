@@ -2,7 +2,10 @@
   "name": "@elias-online/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "server": "nx serve elias_api",
+    "server-build": "nx build elias_api"
+  },
   "private": true,
   "dependencies": {
     "@nestjs/common": "^10.0.2",
