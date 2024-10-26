@@ -1,0 +1,11 @@
+<main class="main">
+  <h1 class="register-heading">Раді Вас вітати в грі Еліас!</h1>
+  <form class="form" [formGroup]="simpleRegisterForm" (ngSubmit)="onSubmit()">
+    <mat-form-field style="margin-bottom: 50px;">
+      <mat-label>Вкажіть ваше ім'я</mat-label>
+      <input matInput placeholder="Ваше ім'я" formControlName="name">
+    </mat-form-field>
+
+    <button mat-raised-button type="submit">Далі</button>
+  </form>
+</main>
